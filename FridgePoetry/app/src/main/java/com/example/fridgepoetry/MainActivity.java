@@ -19,7 +19,7 @@ import android.widget.ImageView;
 
 import static android.view.MotionEvent.INVALID_POINTER_ID;
 
-public class MainActivity extends AppCompatActivity implements View.OnDragListener{
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,28 +60,20 @@ public class MainActivity extends AppCompatActivity implements View.OnDragListen
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onDrag (View v, DragEvent event){
-        return true;
-    }
 
-    private static final String IMAGEVIEW_TAG = "icon bitmap";
+    //private int mActivePointerId = INVALID_POINTER_ID;
 
-    ImageView imageView = new ImageView(this);
-
-    imageView.setimageBitMap(iconBitmap);
-
-    /*private int mActivePointerId = INVALID_POINTER_ID;
-
-    @Override
+    /*@Override
     public boolean onTouchEvent(MotionEvent ev){
         mScaleDetector.onTouchEvent(ev);
         final int action = MotionEventCompat.getActionMasked(ev);
 
         switch(action){
-            case MotionEvent.ACTION_DOWN: {
+            case MotionEvent.ACTION_DOWN:
+                {
                 final int pointerIndex = MotionEventCompat.getActionIndex(ev);
-                final float x = MotionEventCompat.getX(ev, pointerIndex);
-                final float y = MotionEventCompat.getY(ev, pointerIndex);
+                final float x = ev.getX(pointerIndex);
+                final float y = ev.getY(pointerIndex);
 
                 mLastTouchX = x;
                 mLastTouchY = y;
@@ -122,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnDragListen
                 final int pointerIndex = MotionEventCompat.getActionIndex(ev);
                 final int pointerId = MotionEventCompat.getPointerId(ev, pointerIndex);
 
-                if(pointerId == mActivePOinterId) {
+                if(pointerId == mActivePointerId) {
                     final int newPointerIndex = pointerIndex == 0 ? 1 : 0;
                     mLastTouchX = MotionEventCompat.getX(ev, newPointerIndex);
                     mLastTouchY = MotionEventCompat.getY(ev, newPointerIndex);
