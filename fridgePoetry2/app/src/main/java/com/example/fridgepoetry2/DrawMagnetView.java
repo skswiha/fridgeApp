@@ -1,5 +1,7 @@
 package com.example.fridgepoetry2;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -54,10 +56,12 @@ public class DrawMagnetView extends View {
         // Create a new Paint object.
         Paint paint = new Paint();
 
+        Bitmap word = BitmapFactory.decodeResource(getResources(),R.drawable.a);
+
         // Set paint color.
         paint.setColor(this.getBallColor());
 
         // Draw a circle in the canvas.
-        canvas.drawCircle(currX, currY, 35, paint);
+        canvas.drawBitmap(word,currX,currY,paint);
     }
 }

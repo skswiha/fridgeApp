@@ -28,18 +28,19 @@ public class CustomViewActivity extends AppCompatActivity {
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getX() > drawMagnetView.getCurrX()-100 && motionEvent.getX() < drawMagnetView.getCurrX()+200 && motionEvent.getY() > drawMagnetView.getCurrY()-100 && motionEvent.getY() < drawMagnetView.getCurrY()+200) {
+                    // Set drawBallView currX and currY value to user finger x y ordinate value..
+                    drawMagnetView.setCurrX(motionEvent.getX()-50);
+                    drawMagnetView.setCurrY(motionEvent.getY()-50);
 
-                // Set drawBallView currX and currY value to user finger x y ordinate value..
-                drawMagnetView.setCurrX(motionEvent.getX());
-                drawMagnetView.setCurrY(motionEvent.getY());
+                    // Set ball color to blue.
+                    drawMagnetView.setBallColor(Color.BLUE);
 
-                // Set ball color to blue.
-                drawMagnetView.setBallColor(Color.BLUE);
+                    // Notify drawBallView to redraw. This will invoke DrawBallView's onDraw() method.
+                    drawMagnetView.invalidate();
 
-                // Notify drawBallView to redraw. This will invoke DrawBallView's onDraw() method.
-                drawMagnetView.invalidate();
-
-                // Return true means this listener has complete process this event successfully.
+                    // Return true means this listener has complete process this event successfully.
+                }
                 return true;
             }
         };

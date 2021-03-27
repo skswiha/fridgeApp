@@ -1,55 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.example.fridgepoetry2.CustomViewActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fridgepoetry2.CustomViewActivity">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-38dp" />
+
+    <ImageButton
+        android:id="@+id/saveButton"
+        android:layout_width="76dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="314dp"
+        android:layout_marginLeft="314dp"
+        android:layout_marginTop="346dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="303dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/save" />
+
+    <ImageButton
+        android:id="@+id/clearButton"
+        android:layout_width="81dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="310dp"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="454dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="208dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/clear" />
+
+    <ImageButton
+        android:id="@+id/boxButton"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="307dp"
+        android:layout_marginLeft="307dp"
+        android:layout_marginTop="541dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginBottom="111dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/magnet" />
 
     <LinearLayout
         android:id="@+id/idDrawBallView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-27dp">
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="731dp">
 
 
-        <ImageButton
-            android:id="@+id/saveButton"
-            android:layout_width="84dp"
-            android:layout_height="66dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/save" />
-
-        <ImageButton
-            android:id="@+id/clearButton"
-            android:layout_width="81dp"
-            android:layout_height="69dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/clear"
-            android:layout_marginStart="50dp" />
-
-        <ImageButton
-            android:id="@+id/boxButton"
-            android:layout_width="70dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/magnet" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
