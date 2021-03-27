@@ -19,7 +19,7 @@ public class DrawMagnetView extends View {
 
     private final float[][] locations = new float[bitmaps.length][2];
 
-    private Paint paint = new Paint();
+    private final Paint paint = new Paint();
 
     // getter and setter method for currX and currY.
     public float getCurrX() {
