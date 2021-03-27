@@ -16,27 +16,27 @@
         tools:layout_editor_absoluteY="-38dp" />
 
     <LinearLayout
-        android:id="@+id/idDrawBallView"
+        android:id="@+id/idDrawMagnetView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="731dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="731dp">
 
 
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/saveButton"
-        android:layout_width="76dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="314dp"
-        android:layout_marginLeft="314dp"
-        android:layout_marginTop="346dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="303dp"
+        android:layout_width="58dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="543dp"
+        android:layout_marginEnd="318dp"
+        android:layout_marginRight="318dp"
+        android:layout_marginBottom="129dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,14 +46,14 @@
 
     <ImageButton
         android:id="@+id/clearButton"
-        android:layout_width="81dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="454dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="208dp"
+        android:layout_width="57dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="602dp"
+        android:layout_marginEnd="319dp"
+        android:layout_marginRight="319dp"
+        android:layout_marginBottom="74dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,14 +63,14 @@
 
     <ImageButton
         android:id="@+id/boxButton"
-        android:layout_width="83dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="307dp"
-        android:layout_marginLeft="307dp"
-        android:layout_marginTop="541dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
-        android:layout_marginBottom="111dp"
+        android:layout_width="56dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="657dp"
+        android:layout_marginEnd="319dp"
+        android:layout_marginRight="319dp"
+        android:layout_marginBottom="17dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

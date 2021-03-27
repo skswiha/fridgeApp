@@ -15,47 +15,45 @@ public class CustomViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_custom_view);
 
         // Get the root Linearlayout object.
-        LinearLayout rootLayout = (LinearLayout)findViewById(R.id.idDrawBallView);
+        LinearLayout rootLayout = (LinearLayout)findViewById(R.id.idDrawMagnetView);
 
-        // Create the DrawBallView custom view object.
+        // Create the DrawMagnetView custom view object.
         final DrawMagnetView drawMagnetView = new DrawMagnetView(this);
 
-        //set min width and height.
+        // Set min width and height.
         drawMagnetView.setMinimumWidth(500);
         drawMagnetView.setMinimumHeight(800);
 
-            ImageButton clear = (ImageButton)findViewById(R.id.clearButton);
-            clear.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    drawMagnetView.initializeLocations();
-                    drawMagnetView.invalidate();
-                }
-            });
+        // Create an onclick listener object for the clear button
+        ImageButton clear = (ImageButton)findViewById(R.id.clearButton);
+        clear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                drawMagnetView.initializeLocations();
+                drawMagnetView.invalidate();
+            }
+        });
 
-        // Create a ontouch listener object.
+        // Create an ontouch listener object.
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                //if (motionEvent.getX() > drawMagnetView.getCurrX()-100 && motionEvent.getX() < drawMagnetView.getCurrX()+200 && motionEvent.getY() > drawMagnetView.getCurrY()-100 && motionEvent.getY() < drawMagnetView.getCurrY()+200) {
-                    // Set drawBallView currX and currY value to user finger x y ordinate value..
+                    // Set the values currX and currY for the drawMagnetView object to the location that the user touched
                     drawMagnetView.setCurrX(motionEvent.getX());
                     drawMagnetView.setCurrY(motionEvent.getY());
-
 
                     // Notify drawMagnetView to redraw. This will invoke DrawMagnetView's onDraw() method.
                     drawMagnetView.invalidate();
 
                     // Return true means this listener has complete process this event successfully.
-                //}
                 return true;
             }
         };
 
-        // Register onTouchListener object to drawBallView.
+        // Register onTouchListener object to drawMagnetView.
         drawMagnetView.setOnTouchListener(onTouchListener);
 
-        // Add drawBallView object in root LinearLayout object.
+        // Add drawMagnetView object in root LinearLayout object.
         rootLayout.addView(drawMagnetView);
     }
 }
