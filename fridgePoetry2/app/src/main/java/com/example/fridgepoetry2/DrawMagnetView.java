@@ -3,7 +3,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 import com.example.fridgepoetry2.R;
@@ -16,16 +15,9 @@ public class DrawMagnetView extends View {
     // Record current ball vertical ordinate
     private float currY = 100;
 
-    // This is the ball color.
-    private int ballColor = Color.GREEN;
+    private final Bitmap[] bitmaps = {BitmapFactory.decodeResource(getResources(),R.drawable.live), BitmapFactory.decodeResource(getResources(),R.drawable.laugh), BitmapFactory.decodeResource(getResources(),R.drawable.above),BitmapFactory.decodeResource(getResources(),R.drawable.love), BitmapFactory.decodeResource(getResources(),R.drawable.ache), BitmapFactory.decodeResource(getResources(),R.drawable.again)};
 
-    public int getBallColor() {
-        return ballColor;
-    }
-
-    public void setBallColor(int ballColor) {
-        this.ballColor = ballColor;
-    }
+    private float[][] locations = new float[bitmaps.length][2];
 
     // getter and setter method for currX and currY.
     public float getCurrX() {
@@ -44,9 +36,18 @@ public class DrawMagnetView extends View {
         this.currY = currY;
     }
 
-    // DrawBallView constructor.
+    public void initializeLocations(){
+
+        for (int i = 0; i < bitmaps.length; i++){
+            locations[i][0] = (float)Math.random()*1000;
+            locations[i][1] = (float)Math.random()*1000;
+        }
+    }
+
+    // DrawMagnetView constructor.
     public DrawMagnetView(Context context) {
         super(context);
+        initializeLocations();
     }
 
     @Override
@@ -56,12 +57,16 @@ public class DrawMagnetView extends View {
         // Create a new Paint object.
         Paint paint = new Paint();
 
-        Bitmap word = BitmapFactory.decodeResource(getResources(),R.drawable.a);
+        for (int i = 0; i<bitmaps.length; i++){
+            if(locations[i][0]< currX +100 && locations[i][1]<currY+100 && locations[i][0] > currX - 100 && locations[i][1] > currY - 100){
+                canvas.drawBitmap(bitmaps[i], currX, currY, paint);
+                locations[i][0]= currX;
+                locations[i][1]= currY;
+            }
 
-        // Set paint color.
-        paint.setColor(this.getBallColor());
-
-        // Draw a circle in the canvas.
-        canvas.drawBitmap(word,currX,currY,paint);
+            else {
+                canvas.drawBitmap(bitmaps[i], locations[i][0], locations[i][1], paint);
+            }
+        }
     }
 }

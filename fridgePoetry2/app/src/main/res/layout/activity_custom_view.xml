@@ -70,9 +70,10 @@
         android:id="@+id/idDrawBallView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="731dp">
+        tools:layout_editor_absoluteY="731dp"
+        tools:ignore="MissingConstraints">
 
 
     </LinearLayout>

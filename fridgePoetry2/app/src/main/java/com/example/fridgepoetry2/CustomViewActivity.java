@@ -1,6 +1,5 @@
 package com.example.fridgepoetry2;
 
-import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -33,10 +32,8 @@ public class CustomViewActivity extends AppCompatActivity {
                     drawMagnetView.setCurrX(motionEvent.getX()-50);
                     drawMagnetView.setCurrY(motionEvent.getY()-50);
 
-                    // Set ball color to blue.
-                    drawMagnetView.setBallColor(Color.BLUE);
 
-                    // Notify drawBallView to redraw. This will invoke DrawBallView's onDraw() method.
+                    // Notify drawMagnetView to redraw. This will invoke DrawMagnetView's onDraw() method.
                     drawMagnetView.invalidate();
 
                     // Return true means this listener has complete process this event successfully.
