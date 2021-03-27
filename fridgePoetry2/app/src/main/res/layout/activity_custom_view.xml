@@ -15,6 +15,18 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="-38dp" />
 
+    <LinearLayout
+        android:id="@+id/idDrawBallView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="731dp"
+        tools:ignore="MissingConstraints">
+
+
+    </LinearLayout>
+
     <ImageButton
         android:id="@+id/saveButton"
         android:layout_width="76dp"
@@ -66,16 +78,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/magnet" />
 
-    <LinearLayout
-        android:id="@+id/idDrawBallView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="731dp"
-        tools:ignore="MissingConstraints">
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

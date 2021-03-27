@@ -17,7 +17,9 @@ public class DrawMagnetView extends View {
 
     private final Bitmap[] bitmaps = {BitmapFactory.decodeResource(getResources(),R.drawable.live), BitmapFactory.decodeResource(getResources(),R.drawable.laugh), BitmapFactory.decodeResource(getResources(),R.drawable.above),BitmapFactory.decodeResource(getResources(),R.drawable.love), BitmapFactory.decodeResource(getResources(),R.drawable.ache), BitmapFactory.decodeResource(getResources(),R.drawable.again)};
 
-    private float[][] locations = new float[bitmaps.length][2];
+    private final float[][] locations = new float[bitmaps.length][2];
+
+    private Paint paint = new Paint();
 
     // getter and setter method for currX and currY.
     public float getCurrX() {
@@ -54,14 +56,14 @@ public class DrawMagnetView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // Create a new Paint object.
-        Paint paint = new Paint();
+        boolean moved = false;
 
         for (int i = 0; i<bitmaps.length; i++){
-            if(locations[i][0]< currX +100 && locations[i][1]<currY+100 && locations[i][0] > currX - 100 && locations[i][1] > currY - 100){
+            if(locations[i][0]< currX +100 && locations[i][1]<currY+100 && locations[i][0] > currX - 100 && locations[i][1] > currY - 100 && !moved){
                 canvas.drawBitmap(bitmaps[i], currX, currY, paint);
                 locations[i][0]= currX;
                 locations[i][1]= currY;
+                moved = true;
             }
 
             else {

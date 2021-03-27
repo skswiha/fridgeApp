@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class CustomViewActivity extends AppCompatActivity {
@@ -23,21 +24,30 @@ public class CustomViewActivity extends AppCompatActivity {
         drawMagnetView.setMinimumWidth(500);
         drawMagnetView.setMinimumHeight(800);
 
+            ImageButton clear = (ImageButton)findViewById(R.id.clearButton);
+            clear.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    drawMagnetView.initializeLocations();
+                    drawMagnetView.invalidate();
+                }
+            });
+
         // Create a ontouch listener object.
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (motionEvent.getX() > drawMagnetView.getCurrX()-100 && motionEvent.getX() < drawMagnetView.getCurrX()+200 && motionEvent.getY() > drawMagnetView.getCurrY()-100 && motionEvent.getY() < drawMagnetView.getCurrY()+200) {
+                //if (motionEvent.getX() > drawMagnetView.getCurrX()-100 && motionEvent.getX() < drawMagnetView.getCurrX()+200 && motionEvent.getY() > drawMagnetView.getCurrY()-100 && motionEvent.getY() < drawMagnetView.getCurrY()+200) {
                     // Set drawBallView currX and currY value to user finger x y ordinate value..
-                    drawMagnetView.setCurrX(motionEvent.getX()-50);
-                    drawMagnetView.setCurrY(motionEvent.getY()-50);
+                    drawMagnetView.setCurrX(motionEvent.getX());
+                    drawMagnetView.setCurrY(motionEvent.getY());
 
 
                     // Notify drawMagnetView to redraw. This will invoke DrawMagnetView's onDraw() method.
                     drawMagnetView.invalidate();
 
                     // Return true means this listener has complete process this event successfully.
-                }
+                //}
                 return true;
             }
         };
